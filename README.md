@@ -6,11 +6,13 @@ OLPS is an open-source toolbox for On-Line Portfolio Selection, which includes a
 QUICK START
 ===========
 
-OLPS_gui.m 
-run the OLPS toolbox in the Graphical User Interface (GUI)	(recommended, available only in Matlab)
+OLPS_gui.m
+
+run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
 
 OLPS_cli.m 	
-run the OLPS toolbox in the Command Line Interface (CLI)	(compatible for both Matlab and octave)
+
+run the OLPS toolbox in the Command Line Interface (CLI) (compatible for both Matlab and octave)
 
 REFERENCES
 ==========
@@ -59,13 +61,17 @@ FOLDERS
 CONTACT
 =======
 
-Dr. Steven Hoi  E-mail: chhoi@smu.edu.sg
+Dr. Steven Hoi  
+
+E-mail: chhoi@smu.edu.sg
 School of Information Systems
 Singapore Management University
 80 Stamford Road
 Singapore 178902 
 
-Dr. Bin LI  E-mail: BINLI.WHU@WHU.EDU.CN
+Dr. Bin LI  
+
+E-mail: BINLI.WHU@WHU.EDU.CN
 Economics and Management School
 Wuhan University
 Wuhan, P.R. China 430072
