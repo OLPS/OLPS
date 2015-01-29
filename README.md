@@ -6,18 +6,18 @@ OLPS is an open-source toolbox for On-Line Portfolio Selection, which includes a
 QUICK START
 ===========
 
-OLPS_gui.m
+* OLPS_gui.m
 
 run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
 
-OLPS_cli.m 	
+* OLPS_cli.m 	
 
 run the OLPS toolbox in the Command Line Interface (CLI) (compatible for both Matlab and octave)
 
 REFERENCES
 ==========
 
-This toolbox includes software developed at the Singapore Management Universtiy for the following papers:
+This toolbox includes software developed at the SMU for the following papers:
 
 * Bin Li, Doyen Sahoo, and Steven C.H. Hoi. (2015) "OLPS: A Toolbox for On-Line Portfolio Selection." Singapore Management University. 
 
@@ -31,7 +31,7 @@ Please let us know how you use OLPS, and help us develop a better toolbox if pos
 INSTALLATION
 ============
 
-* Unzip the file you just downloaded and copy the OLPS directory to a location of your disk, e.g., /my-directory/
+* Unzip the file you just downloaded and copy the OLPS directory to a location,e.g.,/my-directory/
 
 * Run Matlab/Ocatve, Go to /my-directory/OLPS/ at the command prompt
 
