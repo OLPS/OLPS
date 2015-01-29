@@ -6,7 +6,7 @@ OLPS is an open-source toolbox for On-Line Portfolio Selection, which includes a
 QUICK START
 ===========
 
-* OLPS_gui.m
+* OLPS_gui.m 	
   run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
 
 * OLPS_cli.m 	
@@ -69,7 +69,7 @@ Singapore 178902
 
 Dr. Bin LI  
 
-E-mail: BINLI.WHU@WHU.EDU.CN
+E-mail: binli.whu@whu.edu.cn
 Economics and Management School
 Wuhan University
 Wuhan, P.R. China 430072
