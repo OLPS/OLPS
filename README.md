@@ -7,12 +7,10 @@ QUICK START
 ===========
 
 * OLPS_gui.m
-
-run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
+  run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
 
 * OLPS_cli.m 	
-
-run the OLPS toolbox in the Command Line Interface (CLI) (compatible for both Matlab and octave)
+  run the OLPS toolbox in the Command Line Interface (CLI) (for both Matlab and octave)
 
 REFERENCES
 ==========
