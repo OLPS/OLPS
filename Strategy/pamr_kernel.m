@@ -21,7 +21,6 @@ function [weight] = pamr_kernel(data, weight_o, eta)
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight] = pamr_kernel(data, weight_o, eta)
 
 weight = pamr_expert(data, weight_o, eta);
 

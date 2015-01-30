@@ -19,7 +19,6 @@ function Q = up_expert_findQ(b, data, del0, delta)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function Q = up_expert_findQ(b, data, del0, delta)
 
 [~, N] = size(data);  % Number of stocks,Time period.
 

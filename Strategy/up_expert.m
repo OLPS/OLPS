@@ -19,7 +19,6 @@ function [weight] = up_expert(data, weight_o)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight] = up_expert(data, weight_o)
 
 del0 = 4e-3;      % minimum coordinate
 delta = 5e-3;     % spacing of grid
