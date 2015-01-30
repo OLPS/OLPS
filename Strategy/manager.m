@@ -1,8 +1,11 @@
+function [cum_ret, cumprod_ret, daily_ret, ra_ret, run_time]...
+    = manager(strategy_name, dataset_name, varargins, opts) 
 % Manager: 
-% This program universally calls different on-line portfolio selection strategies and datasets
+% This program universally calls different OLPS strategies and datasets.
 %
 % function [cum_ret, cumprod_ret, daily_ret, ra_ret, run_time]...
 %          = manager(strategy_name, dataset_name, varargins, opts)
+%
 % cum_ret: a number representing the final cumulative wealth.
 % cumprod_ret: cumulative return until each trading period
 % daily_ret: individual returns for each trading period
@@ -24,10 +27,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, ra_ret, run_time] ...
 %          = manager('market', 'nyse_o', {0}, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, ra_ret, run_time]...
-    = manager(strategy_name, dataset_name, varargins, opts) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors: Doyen Sahoo
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Loading the Dataset stringed dataset_name
 if (~opts.quiet_mode)

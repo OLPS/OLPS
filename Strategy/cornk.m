@@ -1,4 +1,5 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
+    = cornk(fid, data, varargins, opts)
 % This program starts the CORN-K algorithm
 % CORN-K is a top-K combination of CORN experts
 %
@@ -17,10 +18,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
 %          = cornk_start(fid, data, {5, 10, 0.1, 0}, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
-    = cornk(fid, data, varargins, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Extract the parameters
 K  = varargins{1};

@@ -1,4 +1,5 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = pamr_1(fid, data, varargins, opts)
 % This program starts the PAMR algorithm
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ....
@@ -16,10 +17,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
 %          = pamr_start(fid, data, {0.5, 0}, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = pamr_1(fid, data, varargins, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Extract the parameters
 epsilon =varargins{1};  % Mean reversion threshold

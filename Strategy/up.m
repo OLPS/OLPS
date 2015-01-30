@@ -1,4 +1,5 @@
-% Li Bin (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = up(fid, data, varargins, opts)
 % This file is an entry for the up strategy.
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
@@ -15,10 +16,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
 %          = up_start(fid, data, {0}, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = up(fid, data, varargins, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Extract the parameters
 tc = varargins{1};      % transaction cost fee rate

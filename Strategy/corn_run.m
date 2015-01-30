@@ -1,4 +1,5 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = corn_run(fid, data, w, c, tc, opts)
 % This program simulates the BK strategy on data
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
@@ -19,10 +20,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
 %            = corn_run(fid, data, w, c, tc, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = corn_run(fid, data, w, c, tc, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %[T, N]=size(data);
 [n, m] = size(data);

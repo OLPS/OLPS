@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight] = pamr_expert(data, weight_o, eta)
 % This program generates portfolio for a specified parameter setting.
 % PAMR expert
 %
@@ -11,9 +11,14 @@
 % eta: Lagarange Multiplier
 %
 % Example: [weight] = pamr_expert(data, weight_o, eta);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight] = pamr_expert(data, weight_o, eta)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [T, N]=size(data);
 
@@ -22,6 +27,7 @@ weight = weight_o - eta*(data(T, :)'-sum(data(T, :))/N);
 % The routine simplex_projection() belongs to John Duchi
 % We include his implementation, while the codes below provide a matlab
 % implementation, which requires the matlab optimization toolbox.
+
 weight = simplex_projection(weight, 1);
 
 if or((weight < -0.00001+zeros(size(weight))), (weight'*ones(N, 1)>1.00001))

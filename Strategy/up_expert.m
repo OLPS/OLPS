@@ -1,6 +1,7 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight] = up_expert(data, weight_o)
 % This program generates portfolio for a specified parameter setting.
 % Refer to KV02
+%
 % function [weight] = up_expert(data, k, l, c)
 %
 % weight: experts portfolio, used for next rebalance/combination
@@ -9,7 +10,14 @@
 % weight_o: last portfolio, also can be last price relative adjusted.
 %
 % Example: [weight] = up_expert(data, weight_o);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [weight] = up_expert(data, weight_o)
 

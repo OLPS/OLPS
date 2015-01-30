@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight] = sp_kernel(data, weight_o, gamma)
 % This program output the final portfolio the SP strategy on data
 %
 % function [weight] = sp_kernel(data, weight_o, gamma)
@@ -10,9 +10,15 @@
 % gamma: switching parameter
 %
 % Example: [weight] = sp_kernel(data, weight_o, 0.25)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight] = sp_kernel(data, weight_o, gamma)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 weight = sp_expert(data, weight_o, gamma);
 

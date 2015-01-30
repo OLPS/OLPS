@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight] = bnn_expert(data, k, pl)
 % This program generates portfolio for a specified parameter setting.
 % BNN strategy
 %
@@ -11,9 +11,14 @@
 % c: correlation coefficient threshold
 %
 % Example: [weight] = bnn_expert(data, k, pl);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight] = bnn_expert(data, k, pl)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [T, N] = size(data);
 

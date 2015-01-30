@@ -1,4 +1,5 @@
-% Li Bin (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = sp_run(fid, data, gamma, tc, opts)
 % This file is the run core for the EG strategy.
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
@@ -17,9 +18,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
 %          = sp_run(fid, data, 0.25, 0, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = sp_run(fid, data, gamma, tc, opts)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [n, m] = size(data);
 

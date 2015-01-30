@@ -1,4 +1,5 @@
-% Li Bin (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = best_run(fid, data, tc, opts)
 % This file simulates the best stock strategy.
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
@@ -15,9 +16,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
 %             = best_run(fid, data, tc, opts)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = best_run(fid, data, tc, opts)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [n, m] = size(data);
 

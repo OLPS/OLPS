@@ -21,8 +21,14 @@ function varargout = deletedMessage(varargin)
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
 % Edit the above text to modify the response to help deletedMessage
-
 % Last Modified by GUIDE v2.5 13-Jul-2013 01:23:38
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Doyen Sahoo
+% Contributors: Bin LI, Steven C.H. Hoi
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;

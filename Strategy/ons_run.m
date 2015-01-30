@@ -1,4 +1,5 @@
-% Li Bin (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = ons_run(fid, data, eta, beta, delta, tc, opts)
 % This file is the run core for the ONS strategy.
 %
 % function [cum_ret, cumprod_ret, daily_ret] ...
@@ -16,10 +17,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
 %      = ons_run(fid, data, eta, beta, delta, tc, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = ons_run(fid, data, eta, beta, delta, tc, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [n, m] = size(data);
 

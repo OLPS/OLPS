@@ -1,12 +1,22 @@
 function [ cum_ret, cumprod_ret, daily_ret, daily_portfolio] = template( fid, data, varargins, opts )
 % This is a template for writing a portfolio selection algorithm
-
-%% Please put the description of your algorithm here
+%
+% [ cum_ret, cumprod_ret, daily_ret, daily_portfolio] = template( fid, data, varargins, opts )
+%
+% Please put the description of your algorithm here
 % Name of Strategy:
 % Author:
 % Description:
 % The sections labelled as "Static" of the file need not be changed
- 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors:  
+% Contributors: 
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
     %% Make changes to this section to construct your algorithm
     
     %% Read Parameters
@@ -46,8 +56,7 @@ function [ cum_ret, cumprod_ret, daily_ret, daily_portfolio] = template( fid, da
         end
         
     end
-    
-    
+       
     
     %% Static
     

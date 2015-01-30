@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [xi_norm] = grw_lambda(xi)
 % This program normalizes a random xi
 %
 % function [xi_norm] = grw_lambda(xi)
@@ -8,7 +8,14 @@
 % xi; randomly generated xi
 %
 % Example: [xi_norm] = grw_lambda(xi)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [xi_norm] = grw_lambda(xi)
 

@@ -1,7 +1,7 @@
 function w = simplex_projection(v, b)
-% PROJECTONTOSIMPLEX Projects point onto simplex of specified radius.
+% Simplex_Projection Projects point onto simplex of specified radius.
 %
-% w = ProjectOntoSimplex(v, b) returns the vector w which is the solution
+% w = simplex_projection(v, b) returns the vector w which is the solution
 %   to the following constrained minimization problem:
 %
 %    min   ||w - v||_2
@@ -10,7 +10,14 @@ function w = simplex_projection(v, b)
 %   That is, performs Euclidean projection of v to the positive simplex of
 %   radius b.
 %
-% Author: John Duchi (jduchi@cs.berkeley.edu)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: John Duchi (jduchi@cs.berkeley.edu)
+% Contributors: Bin LI, Steven C.H. Hoi
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if (b < 0)
   error('Radius of simplex is negative: %2.3f\n', b);

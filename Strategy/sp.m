@@ -1,4 +1,5 @@
-% Li Bin (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = sp_start(fid, data, varargins, opts)
 % This file is an entry for the SP strategy.
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
@@ -16,9 +17,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
 %          = sp_start(fid, data, {0.25, 0}, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = sp_start(fid, data, varargins, opts)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Extract the parameters
 gamma = varargins{1};   % Switching parameter

@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight, data_phi] = olmar2_expert(data, data_phi, weight_o, epsilon, alpha)
 % This program generates portfolio for a specified parameter setting.
 % OLMAR-2 expert
 %
@@ -16,9 +16,14 @@
 % alpha: trade off parameter for moving average
 %
 % Example: weight = olmar1_expert(data, weight_o, epsilon, alpha)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight, data_phi] = olmar2_expert(data, data_phi, weight_o, epsilon, alpha)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [T, N] = size(data);
 

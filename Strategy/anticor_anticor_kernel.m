@@ -1,4 +1,5 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight, exp_w, exp_w2]...
+  = anticor_anticor_kernel(data, W, exp_ret, exp_w, data_day, exp_ret2, exp_w2)
 % This program output the final portfolio the BAH(Anticor(Anticor)) strategy
 % BAH(Anticor()) has two folds of experts
 %
@@ -20,11 +21,14 @@
 % Example: [day_weight, exp_w, exp_w2] ...
 %            = anticor_anticor_kernel(data(1:t-1, :), W, ...
 %            exp_ret, exp_w, data_day(1:t-1, :), exp_ret2, exp_w2);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight, exp_w, exp_w2]...
-    = anticor_anticor_kernel(data, W, ...
-    exp_ret, exp_w, data_day, exp_ret2, exp_w2)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 for i = 2:W,
     exp_w(i-1, :) = anticor_expert(data, exp_w(i-1, :)', i);

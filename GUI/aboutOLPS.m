@@ -21,8 +21,14 @@ function varargout = aboutOLPS(varargin)
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
 % Edit the above text to modify the response to help aboutOLPS
-
 % Last Modified by GUIDE v2.5 31-Jan-2013 17:42:57
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Doyen Sahoo
+% Contributors: Bin LI, Steven C.H. Hoi
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;

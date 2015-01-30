@@ -1,6 +1,8 @@
 function [weight]=ons_expert(data, weight_o, eta, beta, delta)
-% Copyright by Li Bin, 2009
 % Online newton Step for ps, expert file
+%
+% [weight]=ons_expert(data, weight_o, eta, beta, delta)
+%
 % Input
 %     data    -- market historical prices
 %     weight_o -- portfolio weight for last trading day
@@ -8,6 +10,14 @@ function [weight]=ons_expert(data, weight_o, eta, beta, delta)
 % Output
 %     weight  -- weight column vector
 %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [T N]=size(data);
 weight = weight_o(:, T); %#ok<NASGU>

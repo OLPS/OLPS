@@ -1,5 +1,6 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function Q = up_expert_findQ(b, data, del0, delta)
 % This program finds Q for KV02
+%
 % function Q = up_expert_findQ(b, data, del0, delta, N)
 %
 % Q: A modification of the random walk wealth distribution P
@@ -9,7 +10,14 @@
 % del0, delta: parameters
 %
 % Example: Q = up_expert_findQ(b, data, del0, delta, N);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function Q = up_expert_findQ(b, data, del0, delta)
 

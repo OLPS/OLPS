@@ -1,4 +1,5 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight, mu, sigma] ...
+    = cwmr_var_kernel(data, mu, sigma, phi, epsilon)
 % This program output the final portfolio the CWMR-Var algorithm
 % CWMR has only one experts, thus, we go expert directly.
 % If we want buy and hold, combine the experts here.
@@ -19,10 +20,14 @@
 %
 % Example: [weight, mu, sigma] ...
 %          = cwmr_var_kernel(data, mu, sigma, phi, epsilon)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight, mu, sigma] ...
-    = cwmr_var_kernel(data, mu, sigma, phi, epsilon)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [T, N] = size(data);
 

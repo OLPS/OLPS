@@ -1,4 +1,5 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio]...
+    = olmar2_run(fid, data, epsilon, alpha, tc, opts)
 % This program simulates the OLMAR-2 algorithm
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
@@ -18,10 +19,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
 %           = olmar2_run(fid, data, epsilon, alpha, tc, opts)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio]...
-    = olmar2_run(fid, data, epsilon, alpha, tc, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [n, m] = size(data);
 

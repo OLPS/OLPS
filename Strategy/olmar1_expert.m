@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function weight = olmar1_expert(data, weight_o, epsilon, W)
 % This program generates portfolio for a specified parameter setting.
 % OLMAR-1 expert
 %
@@ -12,9 +12,14 @@
 % W: window size for calculating moving average
 %
 % Example: weight = olmar1_expert(data, weight_o, epsilon, W)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function weight = olmar1_expert(data, weight_o, epsilon, W)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [T, N] = size(data);
 

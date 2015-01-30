@@ -1,5 +1,6 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
-% This program simulates the PAMR algorithm
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
+    = pamr_2(fid, data, varargins, opts)
+% This program simulates the PAMR algorithm.
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
 %    = pamr_run(fid, data, K, L, c, tc, opts)
@@ -18,10 +19,14 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
 %            = pamr_run(fid, data, K, L, c, tc, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio] ...
-    = pamr_2(fid, data, varargins, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Extract the parameters
 epsilon =varargins{1};

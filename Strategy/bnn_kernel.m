@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight, exp_w] = bnn_kernel(data, K, L, exp_ret, exp_w)
 % This program output the final portfolio the BNN strategy on data
 % Bk has multiple experts, thus, we combine them in the kernel file.
 %
@@ -14,8 +14,14 @@
 % exp_w: experts' last portfolios
 %
 % Example: [weight, exp_w] = bnn_kernel(data, K, L, exp_ret, exp_w);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [weight, exp_w] = bnn_kernel(data, K, L, exp_ret, exp_w)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 exp_w(K*L+1, :) = bnn_expert(data, 0, 0);
 for k=1:1:K,

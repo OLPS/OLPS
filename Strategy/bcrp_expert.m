@@ -1,5 +1,4 @@
 function [weight]=bcrp_expert(data, weight_o)
-% Copyright by Li Bin, 2009
 % BCRP for ps, expert file
 % expert function for the market function
 % Input
@@ -9,6 +8,14 @@ function [weight]=bcrp_expert(data, weight_o)
 % Output
 %     weight  -- weight column vector
 %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 return;
 

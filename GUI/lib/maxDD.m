@@ -13,6 +13,14 @@ function [ MDD ] = maxDD( NAV )
 %     MDD = DD[i]
 %   endif
 % endfor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Doyen Sahoo
+% Contributors: Steven Hoi
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
     [r c] = size(NAV);
     DD = zeros(r, c);

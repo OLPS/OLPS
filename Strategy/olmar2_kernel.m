@@ -1,4 +1,5 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight, data_phi] ...
+    = olmar2_kernel(data, data_phi, weight_o, epsilon, alpha)
 % This program output the final portfolio the OLMAR-2 algorithm
 % OLMAR has only one experts, thus, we go expert directly.
 % If we want buy and hold, combine the experts here.
@@ -17,10 +18,14 @@
 %
 % Example: [weight, data_phi] ...
 %           = olmar2_kernel(data, data_phi, weight_o, epsilon, alpha);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight, data_phi] ...
-    = olmar2_kernel(data, data_phi, weight_o, epsilon, alpha)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [weight, data_phi] ...
     = olmar2_expert(data, data_phi, weight_o, epsilon, alpha);

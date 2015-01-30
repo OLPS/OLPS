@@ -1,6 +1,17 @@
 function mddval = ra_mdd(data)
-% Copyright by Li Bin, 2009
 % maximum drawdown function for ps
+% 
+% mddval = ra_mdd(data)
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 nDays = length(data);
 mddvec = zeros(nDays, 1);
 

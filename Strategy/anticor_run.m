@@ -1,4 +1,5 @@
-% Li Bin (libin@pmail.ntu.edu.sg)
+function [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
+    = anticor_run(fid, data, W, tc, opts)
 % This file is the run core for the BAH(Anticor) strategy.
 %
 % function [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
@@ -18,10 +19,15 @@
 %
 % Example: [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
 %          = anticor_run(fid, data, 30, 0, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cum_ret, cumprod_ret, daily_ret, daily_portfolio, exp_ret] ...
-    = anticor_run(fid, data, W, tc, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % [T, N]=size(data);
 [n, m] = size(data);

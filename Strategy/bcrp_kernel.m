@@ -1,5 +1,4 @@
 function [weight] = bcrp_kernel(data, weight_o)
-% Copyright by Li Bin, 2009
 % BCRP for ps, kernel file
 % Input
 %     data    -- market historical prices
@@ -8,6 +7,14 @@ function [weight] = bcrp_kernel(data, weight_o)
 % Output
 %     weight  -- weight column vector
 %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors:
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 return;
 end

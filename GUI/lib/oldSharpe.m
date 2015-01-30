@@ -9,11 +9,17 @@ function [ simpleSharpe annualisedSharpe  ] = oldSharpe(varargin)
 % multiplied by sqrt(number of days in a time period)
 % simpleSharpe = mean(returns)/std(returns)
 % annualised sharpe = simpleSharpe*sqrt(252); - for type 0
-
 % Inputs:   returns - is a vector of returns (eg. 0.1 = 10%)
 %           type = 0 for daily, 1 for monthly, 2 for annual; default = 0;
 %           riskFreeReturn - is annualised risk free return
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Doyen Sahoo
+% Contributors: Steven Hoi
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Initialize the outputs
     simpleSharpe = NaN;

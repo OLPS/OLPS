@@ -21,8 +21,14 @@ function varargout = animation(varargin)
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
 % Edit the above text to modify the response to help animation
-
 % Last Modified by GUIDE v2.5 09-Jul-2013 19:10:43
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Doyen Sahoo
+% Contributors: Bin LI, Steven C.H. Hoi
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;

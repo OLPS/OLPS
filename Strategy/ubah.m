@@ -1,4 +1,5 @@
-% Li Bin (libin@pmail.ntu.edu.sg)
+function [cumRet, cumProdRet, dailyRet, dailyPortfolio] ...
+    = ubah(fid, data, varargins, opts)
 % This file is an entry for the market strategy.
 %
 % function [cumRet, cumProdRet, dailyRet, dailyPortfolio] ...
@@ -15,10 +16,14 @@
 %
 % Example: [cumRet, cumProdRet, dailyRet, dailyPortfolio] ...
 %          = market_start(fid, data, {0}, opts);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [cumRet, cumProdRet, dailyRet, dailyPortfolio] ...
-    = ubah(fid, data, varargins, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Extract the parameters
 tc = varargins{1};      % transaction cost fee rate

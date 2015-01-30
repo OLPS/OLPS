@@ -1,7 +1,8 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [ra_ret] = ra_result_analyze(fid, data, cum_ret, cumsum_ret, daily_ret, opts)
 % This program analyzes the backtest's results
 %
 % function [ra_ret] = ra_result_analyze(fid, data, cum_ret, cumsum_ret, daily_ret, opts)
+%
 % ra_ret: a number vector contains the analysis results.
 %
 % fid: a log file id.
@@ -12,9 +13,14 @@
 % opts: option parameter to control the program behavior.
 %
 % Example: ra_ret = ra_result_analyze(fid, data, cum_ret, cumsum_ret, daily_ret, opts)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [ra_ret] = ra_result_analyze(fid, data, cum_ret, cumsum_ret, daily_ret, opts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi
+% Contributors: Doyen Sahoo
+% Change log: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 RET_RF = 1.000156;
 NUM_TRADE = 252;

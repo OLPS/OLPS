@@ -1,4 +1,4 @@
-% Bin Li (libin@pmail.ntu.edu.sg)
+function [weight, exp_w] = cornu_kernel(data, K, L, c, exp_ret, exp_w)
 % This program output the final portfolio the CORNU algorithm
 % Rather than CORN, CORNU has multiple experts
 % And we combine them in this kernel file.
@@ -16,9 +16,14 @@
 % exp_w: experts' last portfolios
 %
 % Example: [weight, exp_w] = cornu_kernel(data, K, L, c, exp_ret, exp_w);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [weight, exp_w] = cornu_kernel(data, K, L, c, exp_ret, exp_w)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Bin LI, Steven C.H. Hoi 
+% Contributors:
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 for k=1:1:K,
     for l=1:1:L,
