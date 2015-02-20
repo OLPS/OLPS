@@ -76,7 +76,10 @@ tElapse = toc(start_watch);
 fprintf(1, '----End %s on %s-----\n', strategy_name, dataset_name);
 
 isOctave = exist('OCTAVE_VERSION', 'builtin') ~= 0;
-if (isOctave) fflush(stdout); % force output in Octave
+if (isOctave) 
+    fflush(stdout); % force output in Octave
+end
+
 %%%%%%%%%%%%%%Logging Stage%%%%%%%%%%%%%%%%%%%%%%
 stop_time = datestr(now, 'yyyy-mmdd-HH-MM-SS-FFF');
 
