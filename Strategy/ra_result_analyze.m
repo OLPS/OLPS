@@ -39,8 +39,8 @@ market_daily_ret = ones(n, 1);
 day_weight = ones(m, 1)/m; 
 for t = 1:1:n,
 	day_weight = day_weight./sum(day_weight);
-    market_daily_ret(t, 1) = (data(t, :)*day_weight);
-	day_weight = day_weight.*data(t, :)'/daily_ret(t, 1);
+    	market_daily_ret(t, 1) = (data(t, :)*day_weight);
+	day_weight = day_weight.*data(t, :)'/market_daily_ret(t, 1);
 end
 
 win_ratio = sum(daily_ret(:, 1)>=market_daily_ret(:, 1))/n;
