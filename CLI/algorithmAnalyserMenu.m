@@ -1,3 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Doyen Sahoo
+% Contributors: Bin LI, Steven C.H. Hoi
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [ ] = algorithmAnalyserMenu( job )
     % Display Home Menu Screen
     
@@ -57,8 +64,7 @@ function [ ] = algorithmAnalyserMenu( job )
             % Get the inputs from "job" and the "parameters"
             % Using functions from other directories - the library
             load ../GUI/config/config.mat;
-            addpath('../GUI/lib');
-            addpath('../Strategy');
+            
             
             % Confirm the algorithm
             strategy_name = char(algorithmName(job.algorithmId)); 
@@ -76,7 +82,14 @@ function [ ] = algorithmAnalyserMenu( job )
             opts.his = 0;
             opts.progress = 1;
             
+            % Baseline algorithms
+            plotCheck = 0;
+            datasetId = job.datasetId;
+            [benchmarks, benchmarks_daily] = displayPreliminaryAnalysis(datasetId, plotCheck);
+            
             % Final Execution
+            addpath('../GUI/lib');
+            addpath('../Strategy');
             strategy_fun = [strategy_name '(1, data, inputs, opts)'];
             [stats, cumprod_ret, daily_ret, daily_portfolio] = eval(strategy_fun);
             returns = daily_ret - 1;
@@ -85,16 +98,15 @@ function [ ] = algorithmAnalyserMenu( job )
             
             % Construct a results data structure, and pass to results
             % manager - stored in variable called 'r'
-            r.returns           = returns;
+            r.returns_daily     = returns;
+            r.returns           = cumprod(r.returns_daily+1);
             r.portfolio         = portfolio;
             r.stats             = stats;
-            plotCheck = 0;
-            datasetId = job.datasetId;
-            [benchmarks, benchmarks_daily] = displayPreliminaryAnalysis(datasetId, plotCheck);
             r.benchmarks        = benchmarks;
             r.benchmarks_daily  = benchmarks_daily;
             r.chosenStrategy    = chosenStrategy;
             r.dataFrequency     = dataFrequency(job.datasetId);
+            displayTable( r );
             resultManager(r);
         case 7,
             disp('Exiting Algorithm Analyser --> to Home');
@@ -168,7 +180,7 @@ function [ dataId ] = dataSelectMenu(dataList )
         disp('Returning back to Algorithm Analyser...');
     else  
         disp('ERROR: Please enter a valid input');
-        dataId = algorithmSelectMenu( dataList );
+        dataId = dataSelectMenu( dataList );
     end
 end
 
@@ -249,8 +261,6 @@ function [benchmarks, benchmarks_daily] = displayPreliminaryAnalysis(datasetId, 
     % Plotting the 3 graphs
     benchmarks          = [market uniform best bcrp_ret];
     benchmarks_daily    = [market_daily uniform_daily best_daily bcrp_daily];
-    expected            =  expected;
-    deviation           = deviation;
     allStocks           = cumprodData;
     
     if (plotCheck)

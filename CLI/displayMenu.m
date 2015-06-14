@@ -1,3 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is part of OLPS: http://OLPS.stevenhoi.org/
+% Original authors: Doyen Sahoo
+% Contributors: Bin LI, Steven C.H. Hoi
+% Change log: 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [ ] = displayMenu( id )
 
 %%
@@ -49,10 +56,11 @@ function [ ] = displayMenu( id )
         disp('************************');
 
         disp('1. Select Algorithms');
-        disp('2. Select Dataset');
-        disp('3. View Current Job');
-        disp('4. START EXECUTION');
-        disp('5. Back');
+        disp('2. Set Parameters');
+        disp('3. Select Dataset');
+        disp('4. View Current Job');
+        disp('5. START EXECUTION');
+        disp('6. Back');
 
         disp('************************');
         fprintf('\n');
@@ -103,7 +111,24 @@ function [ ] = displayMenu( id )
         disp('3. View Risk Analysis Plots');
         disp('4. Portfolio Allocation Analysis');
         disp('5. Back');
-        disp('******************************');
+        disp('***************************');
+        
+    end
+    
+    
+    if id == 7
+        %% Menu for Resutl Manager for results obtained from Algorithm Analyser
+        fprintf('\n');
+        disp('*****************************');
+        disp('** OLPS: RESULTS MANAGER 2 **');
+        disp('*****************************');
+        disp('1. View Table of Results');
+        disp('2. View Returns Graph');
+        disp('3. View Daily Returns');
+        disp('4. View Risk Analysis Plots');
+        disp('5. Portfolio Allocation Analysis');
+        disp('6. Back');
+        disp('*****************************');
         
     end
 end
