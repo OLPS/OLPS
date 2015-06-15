@@ -71,13 +71,25 @@ function [] = displayTable2( results )
     statement   = strcat(statement, algTable);
     statement   = strcat(statement, ' ''RowNames'', report);');
     
-    
-    
     disp('Performance of the Algorithm compared to baselines based on several metrics');  
     if ~exist ('OCTAVE_VERSION', 'builtin');
-        %tableData   = table(Market,Uniform,BestStock,BCRP, Algorithm, 'RowNames', report);
-        tableData = eval(statement);
-        disp(tableData);
+        %tableData   = table(Market,Uniform,BestStock,BCRP, Algorithm, 'RowNames', report); %- works in Matlab 2014a and higher
+        % tableData = eval(statement); %- works in Matlab 2014a and higher
+        finalDisplay = report';
+        finalDisplay(2:end+1) = finalDisplay;
+        finalDisplay{1} = '';
+        
+        for i = 1:1:length(algos)
+            finalDisplay{1,i+1} = algos{i};
+        end
+        
+        for i = 1:1:10
+            for j = 1:1:length(algos)
+                finalDisplay{i+1,j+1} = tableData(i,j);
+            end
+        end
+        
+        disp(finalDisplay);
     else
         % Do the display of column titles
         fprintf('\t Sl. No. \t');

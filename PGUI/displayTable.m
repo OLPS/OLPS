@@ -60,10 +60,28 @@ function [] = displayTable( results )
         BCRP        = tableData(:,4);
         Algorithm   = tableData(:,5);
         report      = {'Final Value','Mean Return for every period','Annualised Return','Standard Deviation','Annualised Standard Deviation','Sharpe Ratio','Calmar Ratio','Sortino Ratio','Value at Risk','Maximum Draw Down'};
-        tableData   = table(Market,Uniform,BestStock,BCRP, Algorithm, 'RowNames', report);
+        % tableData   = table(Market,Uniform,BestStock,BCRP, Algorithm,
+        % 'RowNames', report); % - works only in Matlab 2014a onwards
+        
+        finalDisplay = report';
+        finalDisplay(2:end+1) = finalDisplay;
+        finalDisplay{1} = '';
 
+        finalDisplay{1,2} = 'Market';
+        finalDisplay{1,3} = 'Uniform';
+        finalDisplay{1,4} = 'BestStock';
+        finalDisplay{1,5} = 'BCRP';
+        finalDisplay{1,6} = 'Algorithm';
+        
+        
+        for i = 1:1:10
+            for j = 1:1:5
+                finalDisplay{i+1,j+1} = tableData(i,j);
+            end
+        end
+        
         disp('Performance of the Algorithm compared to baselines based on several metrics');    
-        disp(tableData);
+        disp(finalDisplay);
     
     else
         tabFinal    = {'Sl. No.', 'Market', 'Uniform', 'BestStock', 'BCRP', 'Algorithm'};
@@ -94,6 +112,5 @@ function [] = displayTable( results )
             fprintf('\n');
         end
         
-    
     rmpath('../GUI/lib');
 end
