@@ -9,8 +9,12 @@ QUICK START
 * OLPS_gui.m 	
   run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
 
+* OLPS_pgui.m 	
+  run the OLPS toolbox in the Pseudo GUI Mode (PGUI) (for both Matlab and octave)
+
 * OLPS_cli.m 	
-  run the OLPS toolbox in the Command Line Interface (CLI) (for both Matlab and octave)
+  run the OLPS toolbox in the Command Line Interface (CLI) (recommended for developers, for both Matlab and octave)
+ 
 
 REFERENCES
 ==========
@@ -33,14 +37,14 @@ INSTALLATION
 
 * Run Matlab/Ocatve, Go to /my-directory/OLPS/ at the command prompt
 
-* run 'OLPS_gui' (Matlab) or 'OLPS_cli' (Ocatve)
+* run 'OLPS_gui' (Matlab) or 'OLPS_pgui' (Matlab/Ocatve) or 'OLPS_cli' (Matlab/Ocatve)
 
 Let us know if there is any error when running the above. 
 
 ENVIRONMENT
 ===========
 
-The toolbox has been tested in Matlab 2012b (64-bit and 32-bit) under three major OS: Windows 7/8 (64-bit and 32-bit), Linux (Red-Hat Enterprise Linux) (64-bit and 32-bit) and Mac OS X. The toolbox is also compatable for Octave (version 3.8.0) in the command-line interface (CLI) under three major OS: Windows 7, Linux (64-bit and 32-bit), and Mac OS X.
+The toolbox has been tested in Matlab 2012b (64-bit and 32-bit) under three major OS: Windows 7/8 (64-bit and 32-bit), Linux (Red-Hat Enterprise Linux) (64-bit and 32-bit) and Mac OS X. The toolbox is also compatable for Octave (version 3.8.0) in the Pseudo GUI (PGUI) and Command Line Interface (CLI) under three major OS: Windows 7, Linux (64-bit and 32-bit), and Mac OS X.
 
 DOCUMENTATIONS
 ==============
@@ -53,6 +57,7 @@ FOLDERS
 ./Data: the data set files stored in "*.mat" format.
 ./Documentation: all related documentations.
 ./GUI: The Graphical User Interface for the toolbox
+./PGUI: The Pseudo Graphical User Interface for the toolbox
 ./Strategy: all the strategies in this toolbox.
 ./Log: experimental details of any strategy on any data set.
 
