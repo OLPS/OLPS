@@ -5,14 +5,13 @@
 % Change log: 
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [ ] = addData( dataFileName, dataDescriptionName, newDataFrequency, configFile )
-
+function [  ] = removeStrategy( strategyId, configFile )
+% Delete a dataset from a specified configuration file
     load(configFile);
-    index = length(dataFrequency);
-    index = index+1;
-    dataList{index} = dataDescriptionName;
-    dataName{index} = dataFileName;
-    dataFrequency(index) = newDataFrequency;
-    disp('Added new Dataset.');
+    algorithmList(strategyId)           = [];
+    algorithmName(strategyId)           = [];
+    algorithmParameters(strategyId,:)   = [];
+    defaultParameters(strategyId,:)     = [];
     save(configFile, 'algorithmList', 'algorithmName', 'algorithmParameters', 'dataFrequency', 'dataList', 'dataName', 'defaultParameters', 'windowRisk');
+    disp('Strategy removed from config. Set it as the active configuration and restart the toolbox.');
 end
