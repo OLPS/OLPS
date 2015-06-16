@@ -266,7 +266,7 @@ function [ resultsTable ] = getTable(results)
     BestStock   = tableData(:,3);
     BCRP        = tableData(:,4);
     Algorithm   = tableData(:,5);
-    report      = {'Final Value','Mean Return for every period','Annualised Return','Standard Deviation','Annualised Standard Deviation','Sharpe Ratio','Calmar Ratio','Sortino Ratio','Value at Risk','Maximum Draw Down'};
+    report      = {'Final Value','Mean Return','Annualised Return','Standard Deviation','Annualised Standard Deviation','Sharpe Ratio','Calmar Ratio','Sortino Ratio','Value at Risk','Maximum Draw Down'};
     % tableData   = table(Market,Uniform,BestStock,BCRP, Algorithm,
     % 'RowNames', report); % - works only in Matlab 2014a onwards
 

@@ -301,7 +301,7 @@ function [resultsTable] = getTable( results )
     end
     
     
-    report      = {'Final Value','Mean Return for every period','Annualised Return','Standard Deviation','Annualised Standard Deviation','Sharpe Ratio','Calmar Ratio','Sortino Ratio','Value at Risk','Maximum Draw Down'};
+    report      = {'Final Value','Mean Return','Annualised Return','Standard Deviation','Annualised Standard Deviation','Sharpe Ratio','Calmar Ratio','Sortino Ratio','Value at Risk','Maximum Draw Down'};
     statement   = 'table(';
     statement   = strcat(statement, algTable);
     statement   = strcat(statement, ' ''RowNames'', report);');
