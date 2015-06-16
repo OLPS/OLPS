@@ -148,4 +148,21 @@ function [ ] = displayMenu( id )
         disp('**************************');
         
     end
+    
+    if id == 9
+        %% Select Algorithm for Algorithm Analyser
+        load ../GUI/config/config.mat; 
+        fprintf('\n');
+        disp('____________________________________');
+        disp('-- EXPERIMENTER: SELECT ALGORITHM --');
+        disp('____________________________________');
+        
+        n = length(algorithmList);
+        for i = 1:1:n
+            item = strcat((num2str(i)), '. ');
+            item = strcat(item, algorithmList(i));
+            disp(char(item));
+        end
+        disp('____________________________________');
+    end
 end

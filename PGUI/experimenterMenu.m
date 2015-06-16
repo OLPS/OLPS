@@ -142,7 +142,7 @@ end
 function [ job ] = selectAlgorithms( job )
 
     load ../GUI/config/config.mat;
-    menuId = 4; % AlgorithmList
+    menuId = 9; % AlgorithmList for Experimenter
     displayMenu(menuId);    
     numberOfAlgorithms  = length(algorithmList);
     numberSelected      = length(job.algorithmId);
