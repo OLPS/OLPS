@@ -107,7 +107,7 @@ function [ ] = algorithmAnalyserMenu( job )
             r.chosenStrategy    = chosenStrategy;
             r.dataFrequency     = dataFrequency(job.datasetId);
             displayTable( r );
-            resultManager(r);
+            resultManager(r, job);
         case 7,
             disp('Exiting Algorithm Analyser --> to Home');
             homeMenu;

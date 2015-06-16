@@ -5,7 +5,7 @@
 % Change log: 
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [] = resultManager(results)
+function [] = resultManager(results, job)
 %% The results analysis of the Algorithm Analyser can be seen here
 
     % r.returns_daily     = returns;
@@ -21,14 +21,14 @@ function [] = resultManager(results)
  
     menuId = 6; % Result Manager for Algorithm Analyser
     displayMenu(menuId); 
-    prompt = 'Please enter your choice (1-5):';
+    prompt = 'Please enter your choice (1-6):';
     choice = input(prompt);
 
     switch(choice),
         case 1,
             % Print table of results
             displayTable(results);
-            resultManager(results);
+            resultManager(results, job);
             
         case 2,
             % Plot the graphs of returns (both cumulative return and
@@ -45,7 +45,6 @@ function [] = resultManager(results)
             xlabel('Time');
             ylabel('Portfolio Value');
             
-            
             figure;
             semilogy(cumReturns);
             xlim([0 results.r+1]);
@@ -55,7 +54,7 @@ function [] = resultManager(results)
             xlabel('Time');
             ylabel('Portfolio Value');
             
-            resultManager(results);
+            resultManager(results, job);
             
         case 3,
             % Produce all the risk plots. Tell user to chaneg the window
@@ -158,7 +157,7 @@ function [] = resultManager(results)
                 
                 rmpath('../GUI/lib');
             end            
-            resultManager(results);
+            resultManager(results, job);
             
         case 4,    
             % Portfolio allocation plots
@@ -173,16 +172,27 @@ function [] = resultManager(results)
             xlabel('Assets');
             ylabel('Fraction of Portfolio');
             
-            resultManager(results);
+            resultManager(results, job);
             
         case 5,
+            % Save the results.
+            prompt ='Enter Name of File to save results: ';
+            filename = input(prompt);
+            [ resultsTable ] = getTable(results);
+            cd ../Log/Results/
+            save(filename, 'results', 'job', 'resultsTable');
+            disp('Results saved in /Log/Result ');
+            cd ../../PGUI/
+            resultManager(results, job);
+            
+        case 6,
             disp('Exiting Result Manager --> to Algorithm Analyser');
             [ job ] = jobInit();
             algorithmAnalyserMenu( job );
             
         otherwise,
             disp('ERROR: Please enter a valid input');
-            resultManager(results);
+            resultManager(results, job);
     end
 
 end
@@ -199,4 +209,83 @@ function [ algorithmJob ] = jobInit()
     DL                          = char(dataList);
     algorithmJob.dataset        = DL(algorithmJob.datasetId,:);
     algorithmJob.parameters     = cell2mat(defaultParameters(algorithmJob.algorithmId,:));
+end
+
+
+
+function [ resultsTable ] = getTable(results)
+
+    cumReturns      = [results.benchmarks results.returns];
+    dailyReturns    = [results.benchmarks_daily-1 results.returns_daily];    
+
+    % Compute the statsand display the important numbers in table using the
+    % library functions
+    addpath('../GUI/lib');
+    
+    % Get final Values
+    [r c] = size(cumReturns);
+    results.finalValues = cumReturns(r,:);
+    
+    % Get the mean returnfor every day - This is a simple average
+    results.meanReturns = mean(dailyReturns);
+    
+    % Get annualised returns
+    denominator = 252/results.dataFrequency;
+    Y = r/denominator;
+    results.annualisedReturns = results.finalValues.^(1/Y)-1;
+    
+    % Get standard deviation- a measureof risk
+    results.standardDeviation = std(dailyReturns);
+    
+    % Get annualised standard deviation
+    results.annualisedStandardDeviation = results.standardDeviation * sqrt(denominator);
+    
+    % Get sharpe ratios
+    results.sharpeRatios = sharpe(dailyReturns, results.finalValues,results.dataFrequency);
+    
+    % Get Sortino ratios
+    results.sortinoRatios = sortino(dailyReturns, 0);
+    
+    % Get Value risks at level 5%
+    results.valueAtRisks = var5(dailyReturns);
+    
+    % Get Maximum draw down
+    results.mdds = maxDD_general(cumReturns);
+    
+    % Get Calmar ratios
+    results.calmars = calmar(cumReturns, results.mdds, results.dataFrequency);
+    
+    
+    % Fill up the tables
+    
+    
+    tableData   = [results.finalValues; results.meanReturns; results.annualisedReturns; results.standardDeviation; results.annualisedStandardDeviation; results.sharpeRatios; results.calmars; results.sortinoRatios; results.valueAtRisks; results.mdds];
+
+    Market      = tableData(:,1);
+    Uniform     = tableData(:,2);
+    BestStock   = tableData(:,3);
+    BCRP        = tableData(:,4);
+    Algorithm   = tableData(:,5);
+    report      = {'Final Value','Mean Return for every period','Annualised Return','Standard Deviation','Annualised Standard Deviation','Sharpe Ratio','Calmar Ratio','Sortino Ratio','Value at Risk','Maximum Draw Down'};
+    % tableData   = table(Market,Uniform,BestStock,BCRP, Algorithm,
+    % 'RowNames', report); % - works only in Matlab 2014a onwards
+
+    finalDisplay = report';
+    finalDisplay(2:end+1) = finalDisplay;
+    finalDisplay{1} = '';
+
+    finalDisplay{1,2} = 'Market';
+    finalDisplay{1,3} = 'Uniform';
+    finalDisplay{1,4} = 'BestStock';
+    finalDisplay{1,5} = 'BCRP';
+    finalDisplay{1,6} = 'Algorithm';
+
+
+    for i = 1:1:10
+        for j = 1:1:5
+            finalDisplay{i+1,j+1} = tableData(i,j);
+        end
+    end
+    
+    resultsTable = finalDisplay;
 end

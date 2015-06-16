@@ -5,7 +5,7 @@
 % Change log: 
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [] = resultManager2( results )
+function [] = resultManager2( results, job )
 % Results analysis for experimenter
 
     % r.daily_ret             = daily_ret-1;
@@ -20,14 +20,14 @@ function [] = resultManager2( results )
     
     menuId = 7; % Result Manager for Experimenter
     displayMenu(menuId); 
-    prompt = 'Please enter your choice (1-5):';
+    prompt = 'Please enter your choice (1-7):';
     choice = input(prompt);
     
     switch(choice),
         case 1,
             % Print table of results
             displayTable2(results);
-            resultManager2(results);
+            resultManager2(results, job);
             
         case 2,
             % Plot the graphs of returns (both cumulative return and
@@ -54,7 +54,7 @@ function [] = resultManager2( results )
             xlabel('Time');
             ylabel('Portfolio Value');
             
-            resultManager2(results);
+            resultManager2(results, job);
         
         case 3,
             % Display bar plot of daily returns
@@ -74,7 +74,7 @@ function [] = resultManager2( results )
                 legend(algos, 'Location', 'Best');
             end
             
-            resultManager2(results);
+            resultManager2(results, job);
             
         case 4,
             % Produce all the risk plots. Tell user to change the window
@@ -177,7 +177,7 @@ function [] = resultManager2( results )
                 rmpath('../GUI/lib');
             end
             
-            resultManager2(results);
+            resultManager2(results, job);
             
         case 5,    
             % Portfolio allocation plots
@@ -200,16 +200,27 @@ function [] = resultManager2( results )
             legend(algos, 'Location', 'Best');
             grid on;
             
-            resultManager2(results);
-            
+            resultManager2(results, job);
+        
         case 6,
+            % Save the results.
+            prompt ='Enter Name of File to save results: ';
+            filename = input(prompt);
+            [resultsTable] = getTable( results );
+            cd ../Log/Results/
+            save(filename, 'results', 'job', 'resultsTable');
+            disp('Results saved in /Log/Result ');
+            cd ../../PGUI/
+            resultManager2(results, job);
+            
+        case 7,
             disp('Exiting Result Manager --> to Experimenter');
             [ job ] = jobInit();
             experimenterMenu( job );
             
         otherwise,
             disp('ERROR: Please enter a valid input');
-            resultManager2(results);
+            resultManager2(results, job);
     end
 
 end
@@ -226,4 +237,92 @@ function [ experimenterJob ] = jobInit()
     experimenterJob.algorithmId    = 1;
     experimenterJob.datasetId      = 1;
     experimenterJob.parameters     = defaultParameters(experimenterJob.algorithmId,:);
+end
+
+
+function [resultsTable] = getTable( results )
+ % Initial display
+    cumReturns      = [results.cum_ret];
+    dailyReturns    = [results.daily_ret];    
+
+    % Compute the statsand display the important numbers in table using the
+    % library functions
+    addpath('../GUI/lib');
+    
+    % Get final Values
+    [r c] = size(cumReturns);
+    results.finalValues = cumReturns(r,:);
+    
+    % Get the mean returnfor every day - This is a simple average
+    results.meanReturns = mean(dailyReturns);
+    
+    % Get annualised returns
+    denominator = 252/results.dataFrequency;
+    Y = r/denominator;
+    results.annualisedReturns = results.finalValues.^(1/Y)-1;
+    
+    % Get standard deviation- a measureof risk
+    results.standardDeviation = std(dailyReturns);
+    
+    % Get annualised standard deviation
+    results.annualisedStandardDeviation = results.standardDeviation * sqrt(denominator);
+    
+    % Get sharpe ratios
+    results.sharpeRatios = sharpe(dailyReturns, results.finalValues,results.dataFrequency);
+    
+    % Get Sortino ratios
+    results.sortinoRatios = sortino(dailyReturns, 0);
+    
+    % Get Value risks at level 5%
+    results.valueAtRisks = var5(dailyReturns);
+    
+    % Get Maximum draw down
+    results.mdds = maxDD_general(cumReturns);
+    
+    % Get Calmar ratios
+    results.calmars = calmar(cumReturns, results.mdds, results.dataFrequency);
+    
+    
+    % Fill up the tables
+    tableData   = [results.finalValues; results.meanReturns; results.annualisedReturns; results.standardDeviation; results.annualisedStandardDeviation; results.sharpeRatios; results.calmars; results.sortinoRatios; results.valueAtRisks; results.mdds];
+    
+    load ../GUI/config/config.mat;
+    algos = algorithmName(results.selectedAlgorithms);
+    algTable = '';
+    for i = 1:1:c
+        statement = cell2mat(algos(i));
+        algTable = strcat(algTable, statement);
+        algTable = strcat(algTable, ',');
+        statement = strcat(statement, '=');
+        statement = strcat(statement, 'tableData(:,');
+        statement = strcat(statement, num2str(i));
+        statement = strcat(statement, ');');
+        eval(statement);
+    end
+    
+    
+    report      = {'Final Value','Mean Return for every period','Annualised Return','Standard Deviation','Annualised Standard Deviation','Sharpe Ratio','Calmar Ratio','Sortino Ratio','Value at Risk','Maximum Draw Down'};
+    statement   = 'table(';
+    statement   = strcat(statement, algTable);
+    statement   = strcat(statement, ' ''RowNames'', report);');
+    
+    disp('Performance of the Algorithm compared to baselines based on several metrics');  
+    
+    %tableData   = table(Market,Uniform,BestStock,BCRP, Algorithm, 'RowNames', report); %- works in Matlab 2014a and higher
+    % tableData = eval(statement); %- works in Matlab 2014a and higher
+    finalDisplay = report';
+    finalDisplay(2:end+1) = finalDisplay;
+    finalDisplay{1} = '';
+
+    for i = 1:1:length(algos)
+        finalDisplay{1,i+1} = algos{i};
+    end
+
+    for i = 1:1:10
+        for j = 1:1:length(algos)
+            finalDisplay{i+1,j+1} = tableData(i,j);
+        end
+    end
+    
+    resultsTable = finalDisplay;
 end

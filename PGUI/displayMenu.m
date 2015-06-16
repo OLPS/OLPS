@@ -110,7 +110,8 @@ function [ ] = displayMenu( id )
         disp('2. View Returns Graph');
         disp('3. View Risk Analysis Plots');
         disp('4. Portfolio Allocation Analysis');
-        disp('5. Back');
+        disp('5. Save Results');
+        disp('6. Back');
         disp('***************************');
         
     end
@@ -127,7 +128,8 @@ function [ ] = displayMenu( id )
         disp('3. View Daily Returns');
         disp('4. View Risk Analysis Plots');
         disp('5. Portfolio Allocation Analysis');
-        disp('6. Back');
+        disp('6. Save Results');
+        disp('7. Back');
         disp('*****************************');
         
     end

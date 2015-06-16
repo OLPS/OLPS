@@ -103,7 +103,7 @@ function [ ] = experimenterMenu( job )
             r.selectedAlgorithms    = job.algorithmId;
             r.dataFrequency         = dataFrequency(job.datasetId);
             displayTable2(r);
-            resultManager2(r);
+            resultManager2(r,job);
             
         case 6,
             disp('Exiting Experimenter --> to Home');
