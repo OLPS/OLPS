@@ -7,7 +7,7 @@ QUICK START
 ===========
 
 * OLPS_gui.m 	
-  run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
+  run the OLPS toolbox in the GUI mode (recommended, available only in Matlab). Online video is available at https://www.youtube.com/watch?v=XJPeaiVhEg0.
 
 * OLPS_pgui.m 	
   run the OLPS toolbox in the Pseudo GUI Mode (PGUI) (for both Matlab and octave)
