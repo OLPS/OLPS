@@ -33,6 +33,8 @@ Please let us know how you use OLPS, and help us develop a better toolbox if pos
 INSTALLATION
 ============
 
+* We can download or clone the latest version of OLPS from the project website  at \url{https://github.com/OLPS/}.
+
 * Unzip the file you just downloaded and copy the OLPS directory to a location,e.g.,/my-directory/
 
 * Run Matlab/Ocatve, Go to /my-directory/OLPS/ at the command prompt
