@@ -57,10 +57,15 @@ FOLDERS
 =======
 
 ./Data: the data set files stored in "*.mat" format.
+
 ./Documentation: all related documentations.
+
 ./GUI: The Graphical User Interface for the toolbox
+
 ./PGUI: The Pseudo Graphical User Interface for the toolbox
+
 ./Strategy: all the strategies in this toolbox.
+
 ./Log: experimental details of any strategy on any data set.
 
 CONTACT
