@@ -93,4 +93,4 @@ OLPS project website: http://OLPS.stevenhoi.org/
 
 
 This version:
-OLPS 1.0.0, released January 31, 2015.
+OLPS 1.1.0, released June 20, 2015.
