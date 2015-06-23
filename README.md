@@ -7,7 +7,7 @@ QUICK START
 ===========
 
 * OLPS_gui.m 	
-  run the OLPS toolbox in the GUI mode (recommended, available only in Matlab)
+  run the OLPS toolbox in the GUI mode (recommended, available only in Matlab). Online video is available at https://www.youtube.com/watch?v=XJPeaiVhEg0.
 
 * OLPS_pgui.m 	
   run the OLPS toolbox in the Pseudo GUI Mode (PGUI) (for both Matlab and octave)
@@ -33,6 +33,8 @@ Please let us know how you use OLPS, and help us develop a better toolbox if pos
 INSTALLATION
 ============
 
+* We can download or clone the latest version of OLPS from the project website  at \url{https://github.com/OLPS/}.
+
 * Unzip the file you just downloaded and copy the OLPS directory to a location,e.g.,/my-directory/
 
 * Run Matlab/Ocatve, Go to /my-directory/OLPS/ at the command prompt
@@ -55,10 +57,15 @@ FOLDERS
 =======
 
 ./Data: the data set files stored in "*.mat" format.
+
 ./Documentation: all related documentations.
+
 ./GUI: The Graphical User Interface for the toolbox
+
 ./PGUI: The Pseudo Graphical User Interface for the toolbox
+
 ./Strategy: all the strategies in this toolbox.
+
 ./Log: experimental details of any strategy on any data set.
 
 CONTACT
@@ -86,4 +93,4 @@ OLPS project website: http://OLPS.stevenhoi.org/
 
 
 This version:
-OLPS 1.0.0, released January 31, 2015.
+OLPS 1.1.0, released June 20, 2015.
