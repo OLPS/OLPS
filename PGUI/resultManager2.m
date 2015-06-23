@@ -191,8 +191,11 @@ function [] = resultManager2( results, job )
             end
             
             [r, c] = size(portfolio);
-            
-            errorbar(expected, deviation,'x');
+            if ~exist ('OCTAVE_VERSION', 'builtin')
+                errorbar(expected, deviation,'x');
+            else
+                errorbar(expected, deviation);
+            end
             xlim([0 c+1]);
             title('Average Portfolio Allocation');
             xlabel('Assets');
